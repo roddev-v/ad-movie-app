@@ -11,16 +11,21 @@ class _$AppState extends AppState {
   final bool isLoading;
   @override
   final BuiltList<Movie> movies;
+  @override
+  final int page;
 
   factory _$AppState([void Function(AppStateBuilder) updates]) =>
       (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._({this.isLoading, this.movies}) : super._() {
+  _$AppState._({this.isLoading, this.movies, this.page}) : super._() {
     if (isLoading == null) {
       throw new BuiltValueNullFieldError('AppState', 'isLoading');
     }
     if (movies == null) {
       throw new BuiltValueNullFieldError('AppState', 'movies');
+    }
+    if (page == null) {
+      throw new BuiltValueNullFieldError('AppState', 'page');
     }
   }
 
@@ -36,19 +41,22 @@ class _$AppState extends AppState {
     if (identical(other, this)) return true;
     return other is AppState &&
         isLoading == other.isLoading &&
-        movies == other.movies;
+        movies == other.movies &&
+        page == other.page;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, isLoading.hashCode), movies.hashCode));
+    return $jf(
+        $jc($jc($jc(0, isLoading.hashCode), movies.hashCode), page.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AppState')
           ..add('isLoading', isLoading)
-          ..add('movies', movies))
+          ..add('movies', movies)
+          ..add('page', page))
         .toString();
   }
 }
@@ -64,12 +72,17 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   ListBuilder<Movie> get movies => _$this._movies ??= new ListBuilder<Movie>();
   set movies(ListBuilder<Movie> movies) => _$this._movies = movies;
 
+  int _page;
+  int get page => _$this._page;
+  set page(int page) => _$this._page = page;
+
   AppStateBuilder();
 
   AppStateBuilder get _$this {
     if (_$v != null) {
       _isLoading = _$v.isLoading;
       _movies = _$v.movies?.toBuilder();
+      _page = _$v.page;
       _$v = null;
     }
     return this;
@@ -92,8 +105,9 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState build() {
     _$AppState _$result;
     try {
-      _$result =
-          _$v ?? new _$AppState._(isLoading: isLoading, movies: movies.build());
+      _$result = _$v ??
+          new _$AppState._(
+              isLoading: isLoading, movies: movies.build(), page: page);
     } catch (_) {
       String _$failedField;
       try {

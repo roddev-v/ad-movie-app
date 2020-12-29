@@ -18,16 +18,16 @@ class AppMiddleware {
     ];
   }
 
-  Future<void> _getMovies(Store<AppState> state, dynamic action, NextDispatcher next) async {
+  Future<void> _getMovies(Store<AppState> store, dynamic action, NextDispatcher next) async {
     next(action);
     if (action is GetMoviesStart) {
       try {
-        final List<Movie> movies = await _ytsService.getMovies();
+        final List<Movie> movies = await _ytsService.getMovies(store.state.page);
         final GetMoviesSuccesfull successfully = GetMovies.successful(movies) as GetMoviesSuccesfull;
-        state.dispatch(successfully);
+        store.dispatch(successfully);
       } catch (e) {
         final GetMovieError error = GetMovies.error(e) as GetMovieError;
-        state.dispatch(error);
+        store.dispatch(error);
       }
     }
   }

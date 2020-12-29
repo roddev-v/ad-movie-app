@@ -11,8 +11,8 @@ class YtsService {
 
   final Client _client;
 
-  Future<List<Movie>> getMovies() async {
-    const String url = 'https://yts.mx/api/v2/list_movies.json';
+  Future<List<Movie>> getMovies(int page) async {
+    final String url = 'https://yts.mx/api/v2/list_movies.json?page=$page';
     final Response response = await _client.get(url);
     final String body = response.body;
     final List<dynamic> list = jsonDecode(body)['data']['movies'] as List<dynamic>;
