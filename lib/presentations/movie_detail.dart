@@ -1,6 +1,7 @@
 import 'package:ad_movie_app/containers/movie_container.dart';
 import 'package:ad_movie_app/models/movie.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MovieDetail extends StatelessWidget {
   @override
@@ -31,11 +32,30 @@ class MovieDetail extends StatelessWidget {
                   ),
                 ],
               ),
-              Expanded(child: Text(movie.summary))
+              Text(movie.summary),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: () => openIMDB(movie.imdbCode),
+                    color: const Color.fromRGBO(229, 182, 32, 1),
+                    child: const Text('IMDb'),
+                  ),
+                ],
+              )
             ],
           ),
         ),
       );
     });
+  }
+
+  Future<void> openIMDB(String imdbCode) async {
+    final String url = 'https://www.imdb.com/title/$imdbCode/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      print('error lunching  $url');
+    }
   }
 }
