@@ -27,6 +27,12 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
       serializers.serialize(object.year, specifiedType: const FullType(int)),
       'rating',
       serializers.serialize(object.rating, specifiedType: const FullType(num)),
+      'summary',
+      serializers.serialize(object.summary,
+          specifiedType: const FullType(String)),
+      'imdb_code',
+      serializers.serialize(object.imdbCode,
+          specifiedType: const FullType(String)),
       'background_image',
       serializers.serialize(object.backgroundImage,
           specifiedType: const FullType(String)),
@@ -68,6 +74,14 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
           result.rating = serializers.deserialize(value,
               specifiedType: const FullType(num)) as num;
           break;
+        case 'summary':
+          result.summary = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'imdb_code':
+          result.imdbCode = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'background_image':
           result.backgroundImage = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -97,6 +111,10 @@ class _$Movie extends Movie {
   @override
   final num rating;
   @override
+  final String summary;
+  @override
+  final String imdbCode;
+  @override
   final String backgroundImage;
   @override
   final String mediumCoverImage;
@@ -111,6 +129,8 @@ class _$Movie extends Movie {
       this.title,
       this.year,
       this.rating,
+      this.summary,
+      this.imdbCode,
       this.backgroundImage,
       this.mediumCoverImage,
       this.largeCoverImage})
@@ -126,6 +146,12 @@ class _$Movie extends Movie {
     }
     if (rating == null) {
       throw new BuiltValueNullFieldError('Movie', 'rating');
+    }
+    if (summary == null) {
+      throw new BuiltValueNullFieldError('Movie', 'summary');
+    }
+    if (imdbCode == null) {
+      throw new BuiltValueNullFieldError('Movie', 'imdbCode');
     }
     if (backgroundImage == null) {
       throw new BuiltValueNullFieldError('Movie', 'backgroundImage');
@@ -153,6 +179,8 @@ class _$Movie extends Movie {
         title == other.title &&
         year == other.year &&
         rating == other.rating &&
+        summary == other.summary &&
+        imdbCode == other.imdbCode &&
         backgroundImage == other.backgroundImage &&
         mediumCoverImage == other.mediumCoverImage &&
         largeCoverImage == other.largeCoverImage;
@@ -164,9 +192,13 @@ class _$Movie extends Movie {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, id.hashCode), title.hashCode),
-                        year.hashCode),
-                    rating.hashCode),
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, id.hashCode), title.hashCode),
+                                year.hashCode),
+                            rating.hashCode),
+                        summary.hashCode),
+                    imdbCode.hashCode),
                 backgroundImage.hashCode),
             mediumCoverImage.hashCode),
         largeCoverImage.hashCode));
@@ -179,6 +211,8 @@ class _$Movie extends Movie {
           ..add('title', title)
           ..add('year', year)
           ..add('rating', rating)
+          ..add('summary', summary)
+          ..add('imdbCode', imdbCode)
           ..add('backgroundImage', backgroundImage)
           ..add('mediumCoverImage', mediumCoverImage)
           ..add('largeCoverImage', largeCoverImage))
@@ -205,6 +239,14 @@ class MovieBuilder implements Builder<Movie, MovieBuilder> {
   num get rating => _$this._rating;
   set rating(num rating) => _$this._rating = rating;
 
+  String _summary;
+  String get summary => _$this._summary;
+  set summary(String summary) => _$this._summary = summary;
+
+  String _imdbCode;
+  String get imdbCode => _$this._imdbCode;
+  set imdbCode(String imdbCode) => _$this._imdbCode = imdbCode;
+
   String _backgroundImage;
   String get backgroundImage => _$this._backgroundImage;
   set backgroundImage(String backgroundImage) =>
@@ -228,6 +270,8 @@ class MovieBuilder implements Builder<Movie, MovieBuilder> {
       _title = _$v.title;
       _year = _$v.year;
       _rating = _$v.rating;
+      _summary = _$v.summary;
+      _imdbCode = _$v.imdbCode;
       _backgroundImage = _$v.backgroundImage;
       _mediumCoverImage = _$v.mediumCoverImage;
       _largeCoverImage = _$v.largeCoverImage;
@@ -257,6 +301,8 @@ class MovieBuilder implements Builder<Movie, MovieBuilder> {
             title: title,
             year: year,
             rating: rating,
+            summary: summary,
+            imdbCode: imdbCode,
             backgroundImage: backgroundImage,
             mediumCoverImage: mediumCoverImage,
             largeCoverImage: largeCoverImage);

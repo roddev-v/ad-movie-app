@@ -21,7 +21,7 @@ class MovieDetail extends StatelessWidget {
                     style: const TextStyle(fontSize: 20.0),
                   ),
                   Row(
-                    children: [
+                    children: <Widget>[
                       Text(
                         '${movie.rating}',
                         style: const TextStyle(fontSize: 20.0),
