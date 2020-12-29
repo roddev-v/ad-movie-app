@@ -23,6 +23,11 @@ abstract class Movie implements Built<Movie, MovieBuilder> {
 
   num get rating;
 
+  String get summary;
+
+  @BuiltValueField(wireName: 'imdb_code')
+  String get imdbCode;
+
   @BuiltValueField(wireName: 'background_image')
   String get backgroundImage;
 

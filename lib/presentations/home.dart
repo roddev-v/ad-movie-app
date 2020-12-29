@@ -1,5 +1,6 @@
 import 'package:ad_movie_app/actions/get_movies.dart';
 import 'package:ad_movie_app/actions/set_page.dart';
+import 'package:ad_movie_app/actions/set_selected_movie.dart';
 import 'package:ad_movie_app/containers/current_page_container.dart';
 import 'package:ad_movie_app/containers/loading_container.dart';
 import 'package:ad_movie_app/containers/movies_container.dart';
@@ -57,11 +58,14 @@ class Home extends StatelessWidget {
                 itemCount: movies.length,
                 itemBuilder: (BuildContext context, int index) {
                   final Movie movie = movies[index];
-                  return Column(
-                    children: <Widget>[
-                      Expanded(child: Image.network(movie.mediumCoverImage)),
-                      Text(movie.title),
-                    ],
+                  return GestureDetector(
+                    onTap: () => viewMovieDetails(context, movie),
+                    child: Column(
+                      children: <Widget>[
+                        Expanded(child: Image.network(movie.mediumCoverImage)),
+                        Center(child: Text(movie.title)),
+                      ],
+                    ),
                   );
                 },
               );
@@ -102,5 +106,10 @@ class Home extends StatelessWidget {
       next ? store.dispatch(const IncrementPage()) : store.dispatch(const DecrementPage());
     }
     store.dispatch(const GetMovies());
+  }
+
+  void viewMovieDetails(BuildContext context, Movie movie) {
+    StoreProvider.of<AppState>(context).dispatch(SetSelectedMovie(movie.id));
+    Navigator.of(context).pushNamed('/details');
   }
 }

@@ -1,5 +1,6 @@
 import 'package:ad_movie_app/actions/get_movies.dart';
 import 'package:ad_movie_app/actions/set_page.dart';
+import 'package:ad_movie_app/actions/set_selected_movie.dart';
 import 'package:ad_movie_app/models/app_state.dart';
 
 AppState reducer(AppState state, dynamic action) {
@@ -24,6 +25,8 @@ AppState reducer(AppState state, dynamic action) {
     }
   } else if (action is ResetPage) {
     builder.page = 1;
+  } else if (action is SetSelectedMovie$) {
+    builder.selectedMovieId = action.movieId;
   }
 
   return builder.build();

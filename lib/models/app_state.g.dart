@@ -13,11 +13,14 @@ class _$AppState extends AppState {
   final BuiltList<Movie> movies;
   @override
   final int page;
+  @override
+  final int selectedMovieId;
 
   factory _$AppState([void Function(AppStateBuilder) updates]) =>
       (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._({this.isLoading, this.movies, this.page}) : super._() {
+  _$AppState._({this.isLoading, this.movies, this.page, this.selectedMovieId})
+      : super._() {
     if (isLoading == null) {
       throw new BuiltValueNullFieldError('AppState', 'isLoading');
     }
@@ -42,13 +45,15 @@ class _$AppState extends AppState {
     return other is AppState &&
         isLoading == other.isLoading &&
         movies == other.movies &&
-        page == other.page;
+        page == other.page &&
+        selectedMovieId == other.selectedMovieId;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, isLoading.hashCode), movies.hashCode), page.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, isLoading.hashCode), movies.hashCode), page.hashCode),
+        selectedMovieId.hashCode));
   }
 
   @override
@@ -56,7 +61,8 @@ class _$AppState extends AppState {
     return (newBuiltValueToStringHelper('AppState')
           ..add('isLoading', isLoading)
           ..add('movies', movies)
-          ..add('page', page))
+          ..add('page', page)
+          ..add('selectedMovieId', selectedMovieId))
         .toString();
   }
 }
@@ -76,6 +82,11 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   int get page => _$this._page;
   set page(int page) => _$this._page = page;
 
+  int _selectedMovieId;
+  int get selectedMovieId => _$this._selectedMovieId;
+  set selectedMovieId(int selectedMovieId) =>
+      _$this._selectedMovieId = selectedMovieId;
+
   AppStateBuilder();
 
   AppStateBuilder get _$this {
@@ -83,6 +94,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       _isLoading = _$v.isLoading;
       _movies = _$v.movies?.toBuilder();
       _page = _$v.page;
+      _selectedMovieId = _$v.selectedMovieId;
       _$v = null;
     }
     return this;
@@ -107,7 +119,10 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
     try {
       _$result = _$v ??
           new _$AppState._(
-              isLoading: isLoading, movies: movies.build(), page: page);
+              isLoading: isLoading,
+              movies: movies.build(),
+              page: page,
+              selectedMovieId: selectedMovieId);
     } catch (_) {
       String _$failedField;
       try {

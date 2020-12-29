@@ -25,4 +25,7 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   BuiltList<Movie> get movies;
 
   int get page;
+
+  @nullable
+  int get selectedMovieId;
 }
