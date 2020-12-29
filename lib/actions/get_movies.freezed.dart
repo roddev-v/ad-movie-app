@@ -45,6 +45,7 @@ mixin _$GetMovies {
     @required TResult successful(List<Movie> movies),
     @required TResult error(dynamic error),
   });
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
     TResult $default(), {
@@ -52,12 +53,14 @@ mixin _$GetMovies {
     TResult error(dynamic error),
     @required TResult orElse(),
   });
+
   @optionalTypeArgs
   TResult map<TResult extends Object>(
     TResult $default(GetMoviesStart value), {
     @required TResult successful(GetMoviesSuccesfull value),
     @required TResult error(GetMovieError value),
   });
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>(
     TResult $default(GetMoviesStart value), {
@@ -69,8 +72,7 @@ mixin _$GetMovies {
 
 /// @nodoc
 abstract class $GetMoviesCopyWith<$Res> {
-  factory $GetMoviesCopyWith(GetMovies value, $Res Function(GetMovies) then) =
-      _$GetMoviesCopyWithImpl<$Res>;
+  factory $GetMoviesCopyWith(GetMovies value, $Res Function(GetMovies) then) = _$GetMoviesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -78,22 +80,21 @@ class _$GetMoviesCopyWithImpl<$Res> implements $GetMoviesCopyWith<$Res> {
   _$GetMoviesCopyWithImpl(this._value, this._then);
 
   final GetMovies _value;
+
   // ignore: unused_field
   final $Res Function(GetMovies) _then;
 }
 
 /// @nodoc
 abstract class $GetMoviesStartCopyWith<$Res> {
-  factory $GetMoviesStartCopyWith(
-          GetMoviesStart value, $Res Function(GetMoviesStart) then) =
+  factory $GetMoviesStartCopyWith(GetMoviesStart value, $Res Function(GetMoviesStart) then) =
       _$GetMoviesStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class _$GetMoviesStartCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res>
     implements $GetMoviesStartCopyWith<$Res> {
-  _$GetMoviesStartCopyWithImpl(
-      GetMoviesStart _value, $Res Function(GetMoviesStart) _then)
+  _$GetMoviesStartCopyWithImpl(GetMoviesStart _value, $Res Function(GetMoviesStart) _then)
       : super(_value, (v) => _then(v as GetMoviesStart));
 
   @override
@@ -180,18 +181,16 @@ abstract class GetMoviesStart implements GetMovies {
 
 /// @nodoc
 abstract class $GetMoviesSuccesfullCopyWith<$Res> {
-  factory $GetMoviesSuccesfullCopyWith(
-          GetMoviesSuccesfull value, $Res Function(GetMoviesSuccesfull) then) =
+  factory $GetMoviesSuccesfullCopyWith(GetMoviesSuccesfull value, $Res Function(GetMoviesSuccesfull) then) =
       _$GetMoviesSuccesfullCopyWithImpl<$Res>;
+
   $Res call({List<Movie> movies});
 }
 
 /// @nodoc
-class _$GetMoviesSuccesfullCopyWithImpl<$Res>
-    extends _$GetMoviesCopyWithImpl<$Res>
+class _$GetMoviesSuccesfullCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res>
     implements $GetMoviesSuccesfullCopyWith<$Res> {
-  _$GetMoviesSuccesfullCopyWithImpl(
-      GetMoviesSuccesfull _value, $Res Function(GetMoviesSuccesfull) _then)
+  _$GetMoviesSuccesfullCopyWithImpl(GetMoviesSuccesfull _value, $Res Function(GetMoviesSuccesfull) _then)
       : super(_value, (v) => _then(v as GetMoviesSuccesfull));
 
   @override
@@ -223,13 +222,11 @@ class _$GetMoviesSuccesfull implements GetMoviesSuccesfull {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetMoviesSuccesfull &&
-            (identical(other.movies, movies) ||
-                const DeepCollectionEquality().equals(other.movies, movies)));
+            (identical(other.movies, movies) || const DeepCollectionEquality().equals(other.movies, movies)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(movies);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(movies);
 
   @override
   $GetMoviesSuccesfullCopyWith<GetMoviesSuccesfull> get copyWith =>
@@ -296,22 +293,21 @@ abstract class GetMoviesSuccesfull implements GetMovies {
   const factory GetMoviesSuccesfull(List<Movie> movies) = _$GetMoviesSuccesfull;
 
   List<Movie> get movies;
+
   $GetMoviesSuccesfullCopyWith<GetMoviesSuccesfull> get copyWith;
 }
 
 /// @nodoc
 abstract class $GetMovieErrorCopyWith<$Res> {
-  factory $GetMovieErrorCopyWith(
-          GetMovieError value, $Res Function(GetMovieError) then) =
+  factory $GetMovieErrorCopyWith(GetMovieError value, $Res Function(GetMovieError) then) =
       _$GetMovieErrorCopyWithImpl<$Res>;
+
   $Res call({dynamic error});
 }
 
 /// @nodoc
-class _$GetMovieErrorCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res>
-    implements $GetMovieErrorCopyWith<$Res> {
-  _$GetMovieErrorCopyWithImpl(
-      GetMovieError _value, $Res Function(GetMovieError) _then)
+class _$GetMovieErrorCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res> implements $GetMovieErrorCopyWith<$Res> {
+  _$GetMovieErrorCopyWithImpl(GetMovieError _value, $Res Function(GetMovieError) _then)
       : super(_value, (v) => _then(v as GetMovieError));
 
   @override
@@ -343,17 +339,14 @@ class _$GetMovieError implements GetMovieError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetMovieError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
   @override
-  $GetMovieErrorCopyWith<GetMovieError> get copyWith =>
-      _$GetMovieErrorCopyWithImpl<GetMovieError>(this, _$identity);
+  $GetMovieErrorCopyWith<GetMovieError> get copyWith => _$GetMovieErrorCopyWithImpl<GetMovieError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -416,5 +409,6 @@ abstract class GetMovieError implements GetMovies {
   const factory GetMovieError(dynamic error) = _$GetMovieError;
 
   dynamic get error;
+
   $GetMovieErrorCopyWith<GetMovieError> get copyWith;
 }
