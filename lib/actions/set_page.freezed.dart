@@ -7,8 +7,6 @@ part of set_page;
 // FreezedGenerator
 // **************************************************************************
 
-T _$identity<T>(T value) => value;
-
 /// @nodoc
 class _$SetPageTearOff {
   const _$SetPageTearOff();
@@ -31,7 +29,7 @@ class _$SetPageTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $SetPage = _$SetPageTearOff();
+const _$SetPageTearOff $SetPage = _$SetPageTearOff();
 
 /// @nodoc
 mixin _$SetPage {
@@ -90,7 +88,7 @@ abstract class $IncrementPageCopyWith<$Res> {
 /// @nodoc
 class _$IncrementPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res> implements $IncrementPageCopyWith<$Res> {
   _$IncrementPageCopyWithImpl(IncrementPage _value, $Res Function(IncrementPage) _then)
-      : super(_value, (v) => _then(v as IncrementPage));
+      : super(_value, (SetPage v) => _then(v as IncrementPage));
 
   @override
   IncrementPage get _value => super._value as IncrementPage;
@@ -183,7 +181,7 @@ abstract class $DecrementPageCopyWith<$Res> {
 /// @nodoc
 class _$DecrementPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res> implements $DecrementPageCopyWith<$Res> {
   _$DecrementPageCopyWithImpl(DecrementPage _value, $Res Function(DecrementPage) _then)
-      : super(_value, (v) => _then(v as DecrementPage));
+      : super(_value, (SetPage v) => _then(v as DecrementPage));
 
   @override
   DecrementPage get _value => super._value as DecrementPage;
@@ -275,7 +273,7 @@ abstract class $ResetPageCopyWith<$Res> {
 /// @nodoc
 class _$ResetPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res> implements $ResetPageCopyWith<$Res> {
   _$ResetPageCopyWithImpl(ResetPage _value, $Res Function(ResetPage) _then)
-      : super(_value, (v) => _then(v as ResetPage));
+      : super(_value, (SetPage v) => _then(v as ResetPage));
 
   @override
   ResetPage get _value => super._value as ResetPage;
