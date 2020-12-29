@@ -23,7 +23,7 @@ class _$SetSelectedMovieTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $SetSelectedMovie = _$SetSelectedMovieTearOff();
+const _$SetSelectedMovieTearOff $SetSelectedMovie = _$SetSelectedMovieTearOff();
 
 /// @nodoc
 mixin _$SetSelectedMovie {
@@ -72,7 +72,7 @@ abstract class $SetSelectedMovie$CopyWith<$Res> implements $SetSelectedMovieCopy
 class _$SetSelectedMovie$CopyWithImpl<$Res> extends _$SetSelectedMovieCopyWithImpl<$Res>
     implements $SetSelectedMovie$CopyWith<$Res> {
   _$SetSelectedMovie$CopyWithImpl(SetSelectedMovie$ _value, $Res Function(SetSelectedMovie$) _then)
-      : super(_value, (v) => _then(v as SetSelectedMovie$));
+      : super(_value, (SetSelectedMovie v) => _then(v as SetSelectedMovie$));
 
   @override
   SetSelectedMovie$ get _value => super._value as SetSelectedMovie$;
