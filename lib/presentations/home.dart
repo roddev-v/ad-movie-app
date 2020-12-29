@@ -26,16 +26,12 @@ class Home extends StatelessWidget {
                     return MoviesContainer(
                       builder: (BuildContext builder, BuiltList<Movie> movies) {
                         return GridView.builder(
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  mainAxisSpacing: 4.0,
-                                  crossAxisSpacing: 4.0,
-                                  crossAxisCount: 3),
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              mainAxisSpacing: 4.0, crossAxisSpacing: 4.0, crossAxisCount: 3),
                           itemCount: movies.length,
                           itemBuilder: (BuildContext context, int index) {
                             final Movie movie = movies[index];
-                            return GridTile(
-                                child: Image.network(movie.mediumCoverImage));
+                            return GridTile(child: Image.network(movie.mediumCoverImage));
                           },
                         );
                       },
