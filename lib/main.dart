@@ -17,6 +17,7 @@ void main() {
 
   final Store<AppState> store = Store<AppState>(reducer, initialState: initialState, middleware: middleware.middleware);
   store.dispatch(const GetMovies());
+  runApp(App(store: store));
 }
 
 class App extends StatelessWidget {
@@ -28,7 +29,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
       store: store,
-      child: MaterialApp(
+      child: const MaterialApp(
         home: Home(),
       ),
     );
