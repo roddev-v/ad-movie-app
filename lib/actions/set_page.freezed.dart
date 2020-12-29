@@ -41,6 +41,7 @@ mixin _$SetPage {
     @required TResult previous(),
     @required TResult reset(),
   });
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult next(),
@@ -48,12 +49,14 @@ mixin _$SetPage {
     TResult reset(),
     @required TResult orElse(),
   });
+
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult next(IncrementPage value),
     @required TResult previous(DecrementPage value),
     @required TResult reset(ResetPage value),
   });
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult next(IncrementPage value),
@@ -65,8 +68,7 @@ mixin _$SetPage {
 
 /// @nodoc
 abstract class $SetPageCopyWith<$Res> {
-  factory $SetPageCopyWith(SetPage value, $Res Function(SetPage) then) =
-      _$SetPageCopyWithImpl<$Res>;
+  factory $SetPageCopyWith(SetPage value, $Res Function(SetPage) then) = _$SetPageCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -74,22 +76,20 @@ class _$SetPageCopyWithImpl<$Res> implements $SetPageCopyWith<$Res> {
   _$SetPageCopyWithImpl(this._value, this._then);
 
   final SetPage _value;
+
   // ignore: unused_field
   final $Res Function(SetPage) _then;
 }
 
 /// @nodoc
 abstract class $IncrementPageCopyWith<$Res> {
-  factory $IncrementPageCopyWith(
-          IncrementPage value, $Res Function(IncrementPage) then) =
+  factory $IncrementPageCopyWith(IncrementPage value, $Res Function(IncrementPage) then) =
       _$IncrementPageCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$IncrementPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res>
-    implements $IncrementPageCopyWith<$Res> {
-  _$IncrementPageCopyWithImpl(
-      IncrementPage _value, $Res Function(IncrementPage) _then)
+class _$IncrementPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res> implements $IncrementPageCopyWith<$Res> {
+  _$IncrementPageCopyWithImpl(IncrementPage _value, $Res Function(IncrementPage) _then)
       : super(_value, (v) => _then(v as IncrementPage));
 
   @override
@@ -176,16 +176,13 @@ abstract class IncrementPage implements SetPage {
 
 /// @nodoc
 abstract class $DecrementPageCopyWith<$Res> {
-  factory $DecrementPageCopyWith(
-          DecrementPage value, $Res Function(DecrementPage) then) =
+  factory $DecrementPageCopyWith(DecrementPage value, $Res Function(DecrementPage) then) =
       _$DecrementPageCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DecrementPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res>
-    implements $DecrementPageCopyWith<$Res> {
-  _$DecrementPageCopyWithImpl(
-      DecrementPage _value, $Res Function(DecrementPage) _then)
+class _$DecrementPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res> implements $DecrementPageCopyWith<$Res> {
+  _$DecrementPageCopyWithImpl(DecrementPage _value, $Res Function(DecrementPage) _then)
       : super(_value, (v) => _then(v as DecrementPage));
 
   @override
@@ -272,13 +269,11 @@ abstract class DecrementPage implements SetPage {
 
 /// @nodoc
 abstract class $ResetPageCopyWith<$Res> {
-  factory $ResetPageCopyWith(ResetPage value, $Res Function(ResetPage) then) =
-      _$ResetPageCopyWithImpl<$Res>;
+  factory $ResetPageCopyWith(ResetPage value, $Res Function(ResetPage) then) = _$ResetPageCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res>
-    implements $ResetPageCopyWith<$Res> {
+class _$ResetPageCopyWithImpl<$Res> extends _$SetPageCopyWithImpl<$Res> implements $ResetPageCopyWith<$Res> {
   _$ResetPageCopyWithImpl(ResetPage _value, $Res Function(ResetPage) _then)
       : super(_value, (v) => _then(v as ResetPage));
 
