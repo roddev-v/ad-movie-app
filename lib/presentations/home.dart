@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
       body: LoadingContainer(
         builder: (BuildContext builder, bool isLoading) {
           return Column(
-            children: [
+            children: <Widget>[
               Expanded(
                 child: Builder(
                   builder: (BuildContext context) {

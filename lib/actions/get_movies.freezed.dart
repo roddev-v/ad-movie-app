@@ -35,7 +35,7 @@ class _$GetMoviesTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $GetMovies = _$GetMoviesTearOff();
+const _$GetMoviesTearOff $GetMovies = _$GetMoviesTearOff();
 
 /// @nodoc
 mixin _$GetMovies {
@@ -95,7 +95,7 @@ abstract class $GetMoviesStartCopyWith<$Res> {
 class _$GetMoviesStartCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res>
     implements $GetMoviesStartCopyWith<$Res> {
   _$GetMoviesStartCopyWithImpl(GetMoviesStart _value, $Res Function(GetMoviesStart) _then)
-      : super(_value, (v) => _then(v as GetMoviesStart));
+      : super(_value, (GetMovies v) => _then(v as GetMoviesStart));
 
   @override
   GetMoviesStart get _value => super._value as GetMoviesStart;
@@ -191,7 +191,7 @@ abstract class $GetMoviesSuccesfullCopyWith<$Res> {
 class _$GetMoviesSuccesfullCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res>
     implements $GetMoviesSuccesfullCopyWith<$Res> {
   _$GetMoviesSuccesfullCopyWithImpl(GetMoviesSuccesfull _value, $Res Function(GetMoviesSuccesfull) _then)
-      : super(_value, (v) => _then(v as GetMoviesSuccesfull));
+      : super(_value, (GetMovies v) => _then(v as GetMoviesSuccesfull));
 
   @override
   GetMoviesSuccesfull get _value => super._value as GetMoviesSuccesfull;
@@ -308,7 +308,7 @@ abstract class $GetMovieErrorCopyWith<$Res> {
 /// @nodoc
 class _$GetMovieErrorCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res> implements $GetMovieErrorCopyWith<$Res> {
   _$GetMovieErrorCopyWithImpl(GetMovieError _value, $Res Function(GetMovieError) _then)
-      : super(_value, (v) => _then(v as GetMovieError));
+      : super(_value, (GetMovies v) => _then(v as GetMovieError));
 
   @override
   GetMovieError get _value => super._value as GetMovieError;
