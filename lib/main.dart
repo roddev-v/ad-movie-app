@@ -15,8 +15,7 @@ void main() {
   final AppMiddleware middleware = AppMiddleware(ytsService: ytsService);
   final AppState initialState = AppState.initialState();
 
-  final Store<AppState> store = Store<AppState>(reducer,
-      initialState: initialState, middleware: middleware.middleware);
+  final Store<AppState> store = Store<AppState>(reducer, initialState: initialState, middleware: middleware.middleware);
   store.dispatch(const GetMovies());
 }
 
